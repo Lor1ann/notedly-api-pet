@@ -1,11 +1,11 @@
 const express = require('express');
 require('dotenv').config();
 const jwt = require('jsonwebtoken');
-const db = require('./db/db');
+const db = require('./src/db/db');
 const { ApolloServer, gql } = require('apollo-server-express');
-const models = require('./db/models');
-const typeDefs = require('./graphql/schema');
-const resolvers = require('./graphql/resolvers');
+const models = require('./src/db/models');
+const typeDefs = require('./src/graphql/schema');
+const resolvers = require('./src/graphql/resolvers');
 const helmet = require('helmet');
 const cors = require('cors');
 
