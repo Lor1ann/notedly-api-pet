@@ -49,7 +49,11 @@ server
     server.applyMiddleware({ app, path: '/api' });
   })
   .then((res) => {
-    app.listen({ port }, () =>
-      console.log(`GraphQL Server running at http://localhost:${port}${server.graphqlPath}`),
-    );
+    app
+      .listen({ port }, () =>
+        console.log(`GraphQL Server running at http://localhost:${port}${server.graphqlPath}`),
+      )
+      .catch((e) => {
+        console.log(e);
+      });
   });
