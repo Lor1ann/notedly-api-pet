@@ -9,7 +9,7 @@ const resolvers = require('./src/graphql/resolvers');
 const helmet = require('helmet');
 const cors = require('cors');
 
-const port = process.env.port || 4000;
+const port = process.env.PORT;
 const DB_HOST = process.env.DB_HOST;
 
 const app = express();
