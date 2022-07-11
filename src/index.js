@@ -1,7 +1,7 @@
 const express = require('express');
 require('dotenv').config();
 const jwt = require('jsonwebtoken');
-const db = require('./src/db/db.js');
+const db = require('./db/db.js');
 const { ApolloServer, gql } = require('apollo-server-express');
 const models = require('./src/db/models');
 const typeDefs = require('./src/graphql/schema');
