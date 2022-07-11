@@ -9,7 +9,7 @@ const resolvers = require('./src/graphql/resolvers');
 const helmet = require('helmet');
 const cors = require('cors');
 
-const port = process.env.PORT;
+const port = process.env.PORT || 4000;
 const DB_HOST = process.env.DB_HOST;
 
 const app = express();
@@ -49,11 +49,7 @@ server
     server.applyMiddleware({ app, path: '/api' });
   })
   .then((res) => {
-    app
-      .listen({ port }, () =>
-        console.log(`GraphQL Server running at http://localhost:${port}${server.graphqlPath}`),
-      )
-      .catch((e) => {
-        console.log(e);
-      });
+    app.listen({ port }, () =>
+      console.log(`GraphQL Server running at http://localhost:${port}${server.graphqlPath}`),
+    );
   });
